@@ -6,7 +6,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	r = numNodes..1
 	(r.first).downto(r.last).each do |i|
 		config.vm.define "dockermesosnode#{i}" do |node|
-			node.vm.box = "centos65"
+			node.vm.box = "ubuntu"
 			node.vm.box_url = "https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box"
 			node.vm.provider "virtualbox" do |v|
 			    v.name = "dockermesosnode#{i}"
@@ -26,12 +26,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			node.vm.provision "shell" do |s|
 				s.path = "scripts/setup-ubuntu-hosts.sh"
 				s.args = "-t #{numNodes}"
-			end
-			if i == 1
-				node.vm.provision "shell" do |s|
-					s.path = "scripts/setup-ubuntu-ssh.sh"
-					s.args = "-s 2 -t #{numNodes}"
-				end
 			end
 		end
 	end

@@ -3,19 +3,16 @@ source "/vagrant/scripts/common.sh"
 
 function disableFirewall {
 	echo "disabling firewall"
-	#service iptables save
-	#service iptables stop
-	#chkconfig iptables off
+	/sbin/iptables-save
+	ufw disable
 }
 
 function installUtilities {
 	echo "install utilities"
-	#yum install -y wget
-    #yum install -y nc
-    #yum install -y zip
-	#yum install -y docker-io
-	#service docker start
-	#chkconfig docker on	
+	apt-get update
+	apt-get -y install docker.io
+	apt-get -y install zip
+	service docker.io start
 }
 echo "setup centos"
 
