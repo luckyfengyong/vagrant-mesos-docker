@@ -12,7 +12,7 @@ function installUtilities {
 	apt-get update
 	apt-get -y install docker.io
 	apt-get -y install zip
-	service docker.io start
+	# service docker.io start
 }
 echo "setup centos"
 
