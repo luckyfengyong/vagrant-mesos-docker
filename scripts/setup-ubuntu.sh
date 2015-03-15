@@ -54,7 +54,7 @@ function installUtilities {
 	# install mongodb for node.js http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
 	apt-get install -y mongodb-org
 	npm install -g session-mongoose
-	npm install -g --save express-session cookie-parser
+	npm install -g express-session cookie-parser
 }
 echo "setup ubuntu"
 
