@@ -1,0 +1,4 @@
+.vagrant/*
+resources/portal/*
+resources/*.html
+resources/*.zip
