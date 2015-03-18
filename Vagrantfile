@@ -6,7 +6,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	r = numNodes..1
 	(r.first).downto(r.last).each do |i|
 		config.vm.define "dockermesosnode#{i}" do |node|
-			node.vm.box = "centos65"
+			node.vm.box = "ubuntu-14.04"
 			node.vm.box_url = "https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box"
 			node.vm.provider "virtualbox" do |v|
 			    v.name = "dockermesosnode#{i}"
