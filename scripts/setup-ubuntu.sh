@@ -12,8 +12,10 @@ function installUtilities {
 	# for mongodb
 	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 	echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
-	apt-get update
-	apt-get -y install docker.io zip 
+	# run docker command inside docker http://www.therightcode.net/run-docker-into-a-container-on-a-mac/
+	apt-get update -y && apt-get upgrade -y
+	apt-get install -y curl
+	curl -sSL https://get.docker.com/ubuntu/ | sh
 	# install nginx as reverse proxy https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-14-04
 	apt-get -y install nginx
 	# install node.js npm
