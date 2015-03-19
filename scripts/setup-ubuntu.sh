@@ -20,12 +20,12 @@ function installUtilities {
 
 	# install swarm https://github.com/docker/swarm/ http://docs.docker.com/swarm/
 	#apt-get install -y golang git
+	#/bin/mkdir -p /usr/local/src/gocode; export GOPATH=/usr/local/src/gocode
 	#go get github.com/tools/godep
-	#/usr/bin/mkdir -p /usr/local/src/gocode; export GOPATH=/usr/local/src/gocode
-	#cd /usr/local/src/gocode
+	#cd /usr/local/src/
 	#git clone https://github.com/docker/swarm
 	#cd swarm
-	#godep go install .
+	#$GOPATH/bin/godep go install .
 
 	# install nginx as reverse proxy https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-14-04
 	apt-get -y install nginx
