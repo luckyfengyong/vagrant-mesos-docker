@@ -15,7 +15,7 @@ function installUtilities {
 
 	# run docker command inside docker http://www.therightcode.net/run-docker-into-a-container-on-a-mac/
 	apt-get update -y && apt-get upgrade -y
-	apt-get install -y curl
+	apt-get install -y curl mailutils
 	curl -sSL https://get.docker.com/ubuntu/ | sh
 
 	# install swarm https://github.com/docker/swarm/ http://docs.docker.com/swarm/
@@ -75,6 +75,13 @@ function installUtilities {
 	apt-get install -y mongodb-org
 	npm install -g session-mongoose
 	npm install -g express-session cookie-parser
+
+	#install ipython https://blog.safaribooksonline.com/2013/12/12/start-ipython-notebook/
+	# http://nbviewer.ipython.org/github/minrk/ipython/blob/master/examples/Notebook/Running%20the%20Notebook%20Server.ipynb
+	#  apt-get install -y python-matplotlib python-scipy python-pandas  python-sympy python-nose ipython-notebook
+	apt-get install -y python2.7-dev python-pip python-setuptools python-zmq python-matplotlib pandoc	
+	pip install ipython[all]
+	pip install ipython mock pymongo
 }
 echo "setup ubuntu"
 
